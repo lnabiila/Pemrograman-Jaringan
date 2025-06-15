@@ -9,7 +9,7 @@ from datetime import datetime
 logging.basicConfig(level=logging.INFO)
 
 def process_string(request_string, client_address):
-    if request_string.startswith("TIME") and request_string.endswith("\n"):
+    if request_string.startswith("TIME") and request_string.endswith("\r\n"):
         now = datetime.now()
         waktu = now.strftime("JAM %H:%M:%S")
         logging.info(f"Client {client_address} requested time")
